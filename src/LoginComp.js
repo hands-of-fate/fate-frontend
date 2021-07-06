@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { login } from './FetchUtils.js'
+import React, { Component } from 'react';
+import { login } from './FetchUtils.js';
 
 export default class LoginComp extends Component {
     state = {
@@ -11,6 +11,7 @@ export default class LoginComp extends Component {
         e.preventDefault();
         const token = await login(this.state.email, this.state.password);
         this.props.login(token)
+        console.log(this.props)
         this.props.history.push('/home')
     }
 
