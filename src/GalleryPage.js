@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import { getAllCards, getAllUserCards } from './FetchUtils'
+import { checkIfOwned, getAllCards, getAllUserCards } from './FetchUtils'
 import GalleryItemComp from './GalleryItemComp';
 
 export default class GalleryPage extends Component {
@@ -16,20 +16,19 @@ export default class GalleryPage extends Component {
         const all_cards_data = await getAllCards();
         const user_all_cards_data = await getAllUserCards(this.props.token);
         await this.setState({ 
-            all_cards: all_cards_data, //user_all_cards: user_all_cards_data 
+            all_cards: all_cards_data, 
+            user_all_cards: user_all_cards_data 
         })
     }
 
     render(){
-        console.log(this.state.user_all_cards)
+        //console.log(this.state.user_all_cards)
         return (
             <div>
-                {/* <p> {this.state.all_cards} </p> */}
+                <p>You have collected {this.state.user_all_cards.length}/78 cards</p> 
                 {
-                    this.state.all_cards.map((card, i) => 
-                        <GalleryItemComp 
-                            info={{...card}}
-                            key={i} />
+                    this.state.user_all_cards.map((card, i) => 
+                            <GalleryItemComp info={card} key={i} />
                     )
                 }
                 <Link to='/home' >

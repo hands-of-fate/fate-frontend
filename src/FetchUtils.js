@@ -32,8 +32,8 @@ export async function getAllUserCards(token) {
     const data = await request
         .get(`${URL}/api/players`)
         .set('Authorization', token)
-    console.log(data, 'this is data')
-    const mungedData = (data.text)
+    //console.log(data, 'this is data')
+    const mungedData = (data.body)
     
     return mungedData;
 }
