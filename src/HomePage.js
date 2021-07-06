@@ -12,14 +12,17 @@ Component {
             <div>
                 Home Page!
                 <section>
-                    <p for='past'>Past</p>
-                    <Link>
+                    <label >Past
+                    <Link to='/gallery'>
                         <button id='past'>Gallery</button>
                     </Link>
-                    <p for='present'>Present</p>
-                    <button id='present'>Combat</button>
-                    <p for='future'>Future</p>
-                    <button id='future'>Reading</button>
+                    </label>
+                    <label >Present
+                        <button id='present'>Combat</button>
+                    </label>
+                    <label >Future
+                        <button id='future'>Reading</button>
+                    </label>
                 </section>
                 <Link to='/'>
                     <button onClick={this.props.logout}>logout</button> 

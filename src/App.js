@@ -10,6 +10,7 @@ import {
 import HomePage from './HomePage.js';
 import TitlePage from "./TitlePage.js";
 import './App.css';
+import GalleryPage from "./GalleryPage.js";
 
 
 export default class App extends Component {
@@ -44,6 +45,14 @@ handleLogout = () => {
               render={(routerProps) =>
                 this.state.token
                   ? <HomePage logout={this.handleLogout} {...routerProps} />
+                  : <Redirect to='/' />} 
+            />
+            <Route 
+              path="/gallery" 
+              exact
+              render={(routerProps) =>
+                this.state.token
+                  ? <GalleryPage token={this.state.token} />
                   : <Redirect to='/' />} 
             />
           </Switch>

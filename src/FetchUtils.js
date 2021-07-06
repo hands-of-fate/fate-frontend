@@ -21,3 +21,26 @@ export async function signup(email, password) {
         })
     return data.body.token
 }
+
+export async function getAllCards() {
+    const data = await request
+        .get(`${URL}/cards`)
+    return data.body;
+}
+
+export async function getAllUserCards(token) {
+    const data = await request
+        .get(`${URL}/api/players`)
+        .set('Authorization', token)
+    console.log(data, 'this is data')
+    const mungedData = (data.text)
+    
+    return mungedData;
+}
+
+export async function checkIfOwned(cardName, userCardsArray) {
+    for(let card of userCardsArray){
+        if(card.name === cardName)
+            return true;
+    } return false;
+}
