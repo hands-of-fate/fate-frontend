@@ -29,7 +29,7 @@ handleLogout = () => {
     return (
       <Router>
         <div>
-          <h2>Header</h2>
+          <h2>The Hands of Fate</h2>
           <Switch>
             <Route 
               path="/" 

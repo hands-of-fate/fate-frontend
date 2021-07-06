@@ -12,7 +12,7 @@ export default class TitlePage extends Component {
                 </section>
                 <section>
                     <SignupComp/>
-                    <LoginComp/>
+                    <LoginComp login={this.props.login}/>
                 </section>
             </div>
         )
