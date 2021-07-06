@@ -11,8 +11,8 @@ export default class TitlePage extends Component {
                     <p>Title goes here</p>
                 </section>
                 <section>
-                    <SignupComp/>
-                    <LoginComp login={this.props.login} history={this.props.history} token={this.props.token} />
+                    <SignupComp login={this.props.login} history={this.props.history} />
+                    <LoginComp login={this.props.login} history={this.props.history} />
                 </section>
             </div>
         )

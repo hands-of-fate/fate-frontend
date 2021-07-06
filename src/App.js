@@ -36,14 +36,14 @@ handleLogout = () => {
             <Route 
               path="/" 
               exact
-              render={(routerProps) => <TitlePage login={this.handleLogin} logout={this.handleLogout} {...routerProps} />} 
+              render={(routerProps) => <TitlePage login={this.handleLogin}  {...routerProps} />} 
             />         
             <Route 
               path="/home" 
               exact
               render={(routerProps) =>
                 this.state.token
-                  ? <HomePage {...routerProps} />
+                  ? <HomePage logout={this.handleLogout} {...routerProps} />
                   : <Redirect to='/' />} 
             />
           </Switch>
