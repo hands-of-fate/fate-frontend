@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import HomePage from './HomePage.js';
 import TitlePage from "./TitlePage.js";
+import './App.css';
 
 
 export default class App extends Component {
@@ -29,7 +30,7 @@ handleLogout = () => {
   render() {
     return (
       <Router>
-        <div>
+        <div className="overall-body">
           <h2>The Hands of Fate</h2>
           <Switch>
             <Route 
