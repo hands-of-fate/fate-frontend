@@ -3,10 +3,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
   // Link,
   // useParams
 } from "react-router-dom";
-// import HomePage from './HomePage.js';
+import HomePage from './HomePage.js';
 import TitlePage from "./TitlePage.js";
 
 
@@ -35,7 +36,15 @@ handleLogout = () => {
               path="/" 
               exact
               render={(routerProps) => <TitlePage login={this.handleLogin} logout={this.handleLogout} {...routerProps} />} 
-            />          
+            />         
+            <Route 
+              path="/home" 
+              exact
+              render={(routerProps) =>
+                this.state.token
+                  ? <HomePage {...routerProps} />
+                  : <Redirect to='/' />} 
+            />
           </Switch>
         </div>
       </Router>
