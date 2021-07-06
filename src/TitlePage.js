@@ -1,18 +1,23 @@
 import React, { Component } from 'react'
 import LoginComp from './LoginComp.js'
 import SignupComp from './SignupComp.js'
+import './TitlePage.css'
 
 export default class TitlePage extends Component {
 
     render() {
         return (
-            <div>
-                <section>
-                    <p>Title goes here</p>
+            <div className="titlePageCont">
+                <section className="title">
+                    <p>The Hands of Fate</p>
                 </section>
-                <section>
-                    <SignupComp/>
-                    <LoginComp login={this.props.login} history={this.props.history} token={this.props.token} />
+                <section className="userForms">
+                    <div className="signup">
+                        <SignupComp/>
+                    </div>
+                    <div className="login">
+                        <LoginComp login={this.props.login} history={this.props.history} token={this.props.token} />
+                    </div>
                 </section>
             </div>
         )

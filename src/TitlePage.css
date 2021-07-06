@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fec61d;
+}
+
+.titlePageCont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fec61d;
+}
+
+.title{
+    align-items: center;
+}
+
+.userForms{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.signup , .login{
+    display: flex;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    height: 500px;
+    width: 300px;
+    margin: 100px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(53, 48, 75, 0.541);
+    background-image: url('https://i.pinimg.com/originals/a1/37/14/a13714f74025104a6ef61c5906dbf834.jpg');
+    background-size: contain;
+}
+
+.signup:hover , .login:hover{
+    display: flex;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    height: 500px;
+    width: 300px;
+    margin: 100px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(53, 48, 75, 0.541);
+}

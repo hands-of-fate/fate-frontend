@@ -31,7 +31,6 @@ handleLogout = () => {
     return (
       <Router>
         <div className="overall-body">
-          <h2>The Hands of Fate</h2>
           <Switch>
             <Route 
               path="/" 
