@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class GalleryItemComp extends Component {
     render() {
-        //console.log('trying to render a card')
+        //console.log(this.props.info)
         return (
             <div>
                 <p> name: {this.props.info.name} </p>

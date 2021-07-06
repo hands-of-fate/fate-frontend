@@ -32,10 +32,10 @@ export async function getAllUserCards(token) {
     const data = await request
         .get(`${URL}/api/players`)
         .set('Authorization', token)
-    //console.log(data, 'this is data')
-    const mungedData = (data.body)
+    console.log(data.body)
+    const mungedData = (data.body[0])
     
-    return mungedData;
+    return mungedData.all_cards;
 }
 
 export async function checkIfOwned(cardName, userCardsArray) {

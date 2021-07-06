@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import { checkIfOwned, getAllCards, getAllUserCards } from './FetchUtils'
+import { getAllCards, getAllUserCards } from './FetchUtils'
 import GalleryItemComp from './GalleryItemComp';
 
 export default class GalleryPage extends Component {
