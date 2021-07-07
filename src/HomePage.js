@@ -10,21 +10,27 @@ Component {
 
     render() {
         return (
-            <div>
+            <div className='homepage-div'>
                 Home Page!
                 <section>
-                    <label >
+                    <label id="homepage-img">
                     <Link to='/gallery'>
                             <button id='past'>
-                                <img src='https://i.pinimg.com/originals/a1/37/14/a13714f74025104a6ef61c5906dbf834.jpg' alt='Past Cards'></img>
+                                <div className='button-img'>
+                                    Gallery
+                                </div>
                         </button>
                     </Link>
+                    </label >
+                    <label id="homepage-img">
+                        <button id='present'> <div className='button-img'>
+                                    Present
+                                </div></button>
                     </label>
-                    <label >
-                        <button id='present'><img src='https://i.pinimg.com/originals/a1/37/14/a13714f74025104a6ef61c5906dbf834.jpg' alt='Present Cards'></img></button>
-                    </label>
-                    <label >
-                        <button id='future'><img src='https://i.pinimg.com/originals/a1/37/14/a13714f74025104a6ef61c5906dbf834.jpg' alt='Future Cards'></img></button>
+                    <label id="homepage-img">
+                        <button id='future'> <div className='button-img'>
+                                    Future
+                                </div></button>
                     </label>
                 </section>
                 <Link to='/'>
