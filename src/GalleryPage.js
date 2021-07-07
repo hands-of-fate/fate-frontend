@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import { getAllCards, getAllUserCards } from './FetchUtils'
+import { getAllCards, getAllUserCards } from './utils/FetchUtils'
 import GalleryItemComp from './GalleryItemComp';
 
 export default class GalleryPage extends Component {
@@ -22,7 +22,6 @@ export default class GalleryPage extends Component {
     }
 
     render(){
-
         return (
             <div>
                 <Link to='/home' >

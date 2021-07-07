@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Combat extends Component {
+export default class CombatPage extends Component {
     state = {
         current_deck: []
     }
