@@ -11,7 +11,7 @@ export default class TitlePage extends Component {
                 <section className="title">
                     <p>The Hands of Fate</p>
                 </section>
-                <section>
+                <section className="userForms">
                     <SignupComp login={this.props.login} history={this.props.history} />
                     <LoginComp login={this.props.login} history={this.props.history} />
                 </section>

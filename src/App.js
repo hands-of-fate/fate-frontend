@@ -31,6 +31,7 @@ handleLogout = () => {
   render() {
     return (
       <Router>
+        <div className="gradient">
         <div className="overall-body">
           <Switch>
             <Route 
@@ -55,6 +56,7 @@ handleLogout = () => {
                   : <Redirect to='/' />} 
             />
           </Switch>
+        </div>
         </div>
       </Router>
     );
