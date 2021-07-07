@@ -24,11 +24,15 @@ export default class CombatPage extends Component {
         await this.doFetch();
     }
 
-    handleCardSelect = async () => {
-
+    handleCardSelect = async (e) => {
+        e.preventDefault()
+        console.log(e.target.value)
+        let enemyHealth = this.state.enemy_health - Number(e.target.value)
+        this.setState({ enemy_health: enemyHealth })
     }
 
     render() {
+        console.log(this.state.enemy_health)
         return (
             <div>
                 <section className='top-combat-section'></section>
@@ -36,7 +40,7 @@ export default class CombatPage extends Component {
                     <div className='bot-combat-left-div'></div>
                     <div className='bot-combat-center-div'>
                         {
-                            this.state.current_hand.map((card, i) => <CombatItemComp info={card} key={i} />)
+                            this.state.current_hand.map((card, i) => <CombatItemComp event={this.handleCardSelect} info={card} key={i} />)
                         }
                     </div>
                     <div className='bot-combat-right-div'></div>
