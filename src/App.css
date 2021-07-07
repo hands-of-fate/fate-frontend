@@ -17,3 +17,16 @@
   height: 100vh;
   width: 100vw;
 }
+
+@font-face {
+    font-family: 'Noggovoso Personal Use';
+    src: url('./assests/NoggovosoPersonalUse-Regular.eot');
+    src: url('./assests/NoggovosoPersonalUse-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assests/NoggovosoPersonalUse-Regular.woff2') format('woff2'),
+        url('./assests/NoggovosoPersonalUse-Regular.woff') format('woff'),
+        url('./assests/NoggovosoPersonalUse-Regular.ttf') format('truetype'),
+        url('./assests/NoggovosoPersonalUse-Regular.svg#NoggovosoPersonalUse-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

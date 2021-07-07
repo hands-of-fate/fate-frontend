@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import './HomePage.css'
 
 export default class HomePage extends 
 Component {
@@ -9,29 +10,38 @@ Component {
 
     render() {
         return (
-            <div>
+            <div className='homepage-div'>
                 Home Page!
                 <section>
-                    <label >Past
+                    <label id="homepage-img">
                     <Link to='/gallery'>
-                        <button id='past'>Gallery</button>
+                            <button id='past'>
+                                <div className='button-img'>
+                                    Gallery
+                                </div>
+                        </button>
                     </Link>
                     </label>
-                    <label >Present
+                    <label id="homepage-img">
                     <Link to='/combat'>
-                        <button id='present'>Challenge Fate</button>
+                            <button id='present'>
+                                <div className='button-img'>
+                                    Challenge Fate
+                                </div></button>
                     </Link>
                     </label>
-                    <label >Future
+                    <label id="homepage-img">
                     <Link to='/readings'>
-                        <button id='future'>Readings</button>
+                            <button id='future'>
+                                <div className='button-img'>
+                                    Future
+                                </div></button>
                     </Link>
                     </label>
                 </section>
                 <Link to='/'>
                     <button onClick={this.props.logout}>logout</button> 
                 </Link>
-
             </div>
         )
     }
