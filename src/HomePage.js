@@ -18,7 +18,9 @@ Component {
                     </Link>
                     </label>
                     <label >Present
-                        <button id='present'>Combat</button>
+                    <Link to='/combat'>
+                        <button id='present'>Challenge Fate</button>
+                    </Link>
                     </label>
                     <label >Future
                         <button id='future'>Reading</button>
