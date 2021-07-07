@@ -21,16 +21,22 @@ Component {
                                 </div>
                         </button>
                     </Link>
-                    </label >
-                    <label id="homepage-img">
-                        <button id='present'> <div className='button-img'>
-                                    Present
-                                </div></button>
                     </label>
                     <label id="homepage-img">
-                        <button id='future'> <div className='button-img'>
+                    <Link to='/combat'>
+                            <button id='present'>
+                                <div className='button-img'>
+                                    Challenge Fate
+                                </div></button>
+                    </Link>
+                    </label>
+                    <label id="homepage-img">
+                    <Link to='/readings'>
+                            <button id='future'>
+                                <div className='button-img'>
                                     Future
                                 </div></button>
+                    </Link>
                     </label>
                 </section>
                 <Link to='/'>

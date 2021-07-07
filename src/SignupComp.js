@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { signup } from './FetchUtils.js'
+import { signup } from './utils/FetchUtils.js'
 import './SignupComp.css'
 
 export default class SignupComp extends Component {

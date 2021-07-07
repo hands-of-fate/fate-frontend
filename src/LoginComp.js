@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { login } from './FetchUtils.js';
+import { login } from './utils/FetchUtils.js';
 
 export default class LoginComp extends Component {
     state = {

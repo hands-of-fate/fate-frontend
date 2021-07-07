@@ -11,6 +11,8 @@ import HomePage from './HomePage.js';
 import TitlePage from "./TitlePage.js";
 import './App.css';
 import GalleryPage from "./GalleryPage.js";
+import CombatPage from "./CombatPage.js";
+import ReadingsPage from "./ReadingsPage.js";
 
 
 export default class App extends Component {
@@ -53,6 +55,22 @@ handleLogout = () => {
               render={(routerProps) =>
                 this.state.token
                   ? <GalleryPage token={this.state.token} />
+                  : <Redirect to='/' />} 
+            />
+            <Route 
+              path="/combat" 
+              exact
+              render={(routerProps) =>
+                this.state.token
+                  ? <CombatPage token={this.state.token} />
+                  : <Redirect to='/' />} 
+            />
+            <Route 
+              path="/readings" 
+              exact
+              render={(routerProps) =>
+                this.state.token
+                  ? <ReadingsPage token={this.state.token} />
                   : <Redirect to='/' />} 
             />
           </Switch>
