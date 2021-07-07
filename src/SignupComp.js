@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { signup } from './FetchUtils.js'
+import './SignupComp.css'
 
 export default class SignupComp extends Component {
     state = {
@@ -28,20 +29,23 @@ export default class SignupComp extends Component {
 
     render() {
         return (
-            <div>
-                Sign up!
+            <>
                 <form onSubmit={this.handleSubmit}>
+                Sign up!
+                <br />
                     <label>
-                        email
+                        Email: &nbsp;
                         <input type="email" onChange={this.handleEmailChange}/>
                     </label>
+                    <br />
                     <label>
-                        password
+                        Password: &nbsp;
                         <input type="password" onChange={this.handlePasswordChange}/>
                     </label>
+                    <br />
                     <button>Sign up!</button>
                 </form>
-            </div>
+            </>
         )
     }
 }

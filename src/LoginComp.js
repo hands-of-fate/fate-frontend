@@ -29,20 +29,23 @@ export default class LoginComp extends Component {
 
     render() {
         return (
-            <div>
-                log in!
+            <>
                 <form onSubmit={this.handleSubmit}>
+                log in!
+                <br />
                     <label>
-                        email
+                        email: &nbsp;
                         <input type="email" onChange={this.handleEmailChange}/>
                     </label>
+                    <br />
                     <label>
-                        password
+                        password: &nbsp;
                         <input type="password" onChange={this.handlePasswordChange}/>
                     </label>
+                    <br />
                     <button>Login!</button>
                 </form>
-            </div>
+            </>
         )
     }
 }

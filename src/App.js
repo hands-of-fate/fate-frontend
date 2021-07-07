@@ -31,8 +31,8 @@ handleLogout = () => {
   render() {
     return (
       <Router>
+        <div className="gradient">
         <div className="overall-body">
-          <h2>The Hands of Fate</h2>
           <Switch>
             <Route 
               path="/" 
@@ -56,6 +56,7 @@ handleLogout = () => {
                   : <Redirect to='/' />} 
             />
           </Switch>
+        </div>
         </div>
       </Router>
     );

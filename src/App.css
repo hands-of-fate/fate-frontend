@@ -1,4 +1,4 @@
-body {
+.gradient {
   background: hsla(217, 96%, 11%, 1);
 
   background: linear-gradient(270deg, hsla(217, 96%, 11%, 1) 11%, hsla(251, 31%, 24%, 1) 56%, hsla(286, 31%, 24%, 1) 74%, hsla(326, 54%, 28%, 1) 90%, hsla(354, 46%, 32%, 1) 100%);
@@ -6,7 +6,14 @@ body {
   background: -moz-linear-gradient(270deg, hsla(217, 96%, 11%, 1) 11%, hsla(251, 31%, 24%, 1) 56%, hsla(286, 31%, 24%, 1) 74%, hsla(326, 54%, 28%, 1) 90%, hsla(354, 46%, 32%, 1) 100%);
   
   background: -webkit-linear-gradient(270deg, hsla(217, 96%, 11%, 1) 11%, hsla(251, 31%, 24%, 1) 56%, hsla(286, 31%, 24%, 1) 74%, hsla(326, 54%, 28%, 1) 90%, hsla(354, 46%, 32%, 1) 100%);
-  
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#011638", endColorstr="#312a50", GradientType=1 );
   height: 100vh;
+}
+
+.overall-body{
+  background-image: url('https://i.pinimg.com/originals/8b/30/71/8b3071feeff83f1e4a63ed231562ff0c.gif'), url('./assests/fresh.png');
+  background-size: 10% 10%, 100% 100%;
+  background-repeat: repeat, no-repeat;
+  height: 100vh;
+  width: 100vw;
 }
