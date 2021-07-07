@@ -23,7 +23,9 @@ Component {
                     </Link>
                     </label>
                     <label >Future
-                        <button id='future'>Reading</button>
+                    <Link to='/readings'>
+                        <button id='future'>Readings</button>
+                    </Link>
                     </label>
                 </section>
                 <Link to='/'>

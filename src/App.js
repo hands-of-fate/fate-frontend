@@ -12,6 +12,7 @@ import TitlePage from "./TitlePage.js";
 import './App.css';
 import GalleryPage from "./GalleryPage.js";
 import Combat from "./Combat.js";
+import Readings from "./Readings.js";
 
 
 export default class App extends Component {
@@ -62,6 +63,14 @@ handleLogout = () => {
               render={(routerProps) =>
                 this.state.token
                   ? <Combat token={this.state.token} />
+                  : <Redirect to='/' />} 
+            />
+            <Route 
+              path="/readings" 
+              exact
+              render={(routerProps) =>
+                this.state.token
+                  ? <Readings token={this.state.token} />
                   : <Redirect to='/' />} 
             />
           </Switch>

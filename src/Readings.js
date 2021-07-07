@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 
-export default class Combat extends Component {
-    state = {
-        current_deck: []
-    }
+export default class Readings extends Component {
     render() {
         return (
             <div>
-                COMBAAAATTTT
+                GETCHA TAROT READ
             </div>
         )
     }
