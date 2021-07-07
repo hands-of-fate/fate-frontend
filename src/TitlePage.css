@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     align-items: center;
     color: #fec61d;
+    font-family: 'Noggovoso Personal Use';
 }
 
 .titlePageCont{
@@ -14,6 +15,9 @@ body {
 
 .title{
     align-items: center;
+    font-size: 7.5rem;
+    color: #e7b92dce;
+    margin-top: -98px;
 }
 
 .userForms{

@@ -1,19 +1,30 @@
-body {
+div {
     display: flex;
     flex-direction: column;
-}
-form{
-    display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     align-content: center;
+    justify-items: center;
+    font-size: 7.5rem;
+    color: #e7b92dce;
+}
+
+section {
     display: flex;
+    flex-direction: row;
+}
+
+label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 30px;
     height: 500px;
     width: 300px;
     justify-content: center;
-    align-items: center;
+    justify-items: center;
     background-color: rgba(53, 48, 75, 0.541);
     background-image: url('https://i.pinimg.com/originals/a1/37/14/a13714f74025104a6ef61c5906dbf834.jpg');
     background-size: contain;
@@ -21,4 +32,16 @@ form{
     margin-top: 20px;
     margin-right: 20px;
     margin-left: 20px;
+    font-size: 2rem;
+}
+img {
+    height: 500px;
+    width: 300px;
+    border-radius: 30px;
+}
+button {
+    font-family: 'Noggovoso Personal Use';
+    font-size: 3rem;
+    border-radius: 30px;
+    padding: 0px, 0px;
 }
