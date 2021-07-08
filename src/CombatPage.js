@@ -51,7 +51,8 @@ export default class CombatPage extends Component {
         }
         // checking to see if user is still alive
         if (this.state.user_health < 1) {
-            await this.setState({loss_trigger: true})
+            await this.setState({ loss_trigger: true })
+            setTimeout(() => this.doGameOver(), 1000)
         } else {
             var newDeck = new Deck(this.state.current_deck)
             let newHand = newDeck.drawRandom(4)
@@ -80,18 +81,17 @@ export default class CombatPage extends Component {
         this.setState({ user_affliction: enemyCardElement})
     }
 
+    doGameOver = () => {
+        if (this.state.loss_trigger) {
+            this.props.history.push('/home')
+        }
+    }
+
     render() {
         return (
             <div>
                 <section className='top-combat-section'>
                     <div></div>
-                    {
-                        this.state.loss_trigger
-                            ? <Link to='/home' >
-                                <button>Return</button>
-                            </Link>
-                            : <div></div>
-                    }
                     <div></div>
                 </section>
                 <section className='bot-combat-section'>
