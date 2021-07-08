@@ -32,14 +32,14 @@ export default class CombatPage extends Component {
         await this.doFetch();
     }
 
-    handleCardSelect = (val, elem, beats) => {
+    handleCardSelect = async (val, elem, beats) => {
 // This section will check to see if the enemy is afflicted with any element and deal damage accordingly. After that, it will change the affliction.
         if(this.state.enemy_affliction === beats) {
             let enemyCritHealth = Number(this.state.enemy_health - (val * 2))
-            this.setState({ enemy_health: enemyCritHealth })
+            await this.setState({ enemy_health: enemyCritHealth })
         } else { 
             let enemyHealth = Number(this.state.enemy_health - val)
-            this.setState({ enemy_health: enemyHealth })
+            await this.setState({ enemy_health: enemyHealth })
         }
         this.setState({ enemy_affliction: elem })
 // This section will draw a random combat tarot card for the enemy and play it automatically.
@@ -47,15 +47,15 @@ export default class CombatPage extends Component {
             //rewards
             console.log('you won')
         } else { 
-            this.doEnemyTurn() 
+            await this.doEnemyTurn() 
         }
         // checking to see if user is still alive
         if (this.state.user_health < 1) {
-            this.setState({loss_trigger: true})
+            await this.setState({loss_trigger: true})
         } else {
             var newDeck = new Deck(this.state.current_deck)
             let newHand = newDeck.drawRandom(4)
-            this.setState({current_hand: newHand})
+            await this.setState({current_hand: newHand})
         }
     }
 
