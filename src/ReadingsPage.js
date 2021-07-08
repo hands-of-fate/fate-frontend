@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { getAllCards } from './utils/FetchUtils'
-import GalleryItemComp from './GalleryItemComp';
 import Deck from 'card-deck'
+import ReadingItemComp from './ReadingItemComp';
 
 export default class ReadingsPage extends Component {
     state = {
@@ -17,6 +17,7 @@ export default class ReadingsPage extends Component {
             all_cards: all_cards_data,
             reading: fullDeck.drawRandom(3)
         });
+
     }
 
     componentDidMount = async () => {
@@ -32,8 +33,8 @@ export default class ReadingsPage extends Component {
                     <button>Home</button>
                 </Link>
                 {
-                    this.state.reading.map((card, i) =>
-                        <GalleryItemComp info={card} key={i} />
+                    this.state.reading.map((card, i) => 
+                        <ReadingItemComp number={Math.ceil(Math.random() * 2)} info={card} key={i} /> 
                     )
                 }
             </div>
