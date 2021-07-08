@@ -1,0 +1,10 @@
+.entireLayout{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardsLayout {
+    display: flex;
+    flex-direction: row;
+}

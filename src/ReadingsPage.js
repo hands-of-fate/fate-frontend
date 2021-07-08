@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { getAllCards } from './utils/FetchUtils'
 import Deck from 'card-deck'
 import ReadingItemComp from './ReadingItemComp';
+import './ReadingsPage.css';
 
 export default class ReadingsPage extends Component {
     state = {
@@ -27,16 +28,18 @@ export default class ReadingsPage extends Component {
     render() {
         
         return (
-            <div>
-                GETCHA TAROT READ
+            <div className="readingPageContainer">
+                <div className="readingTitle">GETCHA TAROT READ</div>
                 <Link to='/home' >
                     <button>Home</button>
                 </Link>
+                <div className="layout">
                 {
                     this.state.reading.map((card, i) => 
                         <ReadingItemComp number={Math.ceil(Math.random() * 2)} info={card} key={i} /> 
                     )
                 }
+                </div>
             </div>
         )
     }

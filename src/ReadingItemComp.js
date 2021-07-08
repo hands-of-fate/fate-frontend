@@ -1,22 +1,26 @@
 import React, { Component } from 'react'
+import './ReadingItemComp.css';
 
 export default class ReadingItemComp extends Component {
 
     render() {
         return (
-            <div>
+            <div className="readingCards">
+                <div img src='./assests/tarotBack.jpg' alt="background" className="readingBG">
+                    </div>
+                <div className="outerBox">
                 {
                     this.props.number === 2
-                        ? <p> name: {this.props.info.name} </p>
-                        : <p> name: {this.props.info.name} Reversed </p>
+                        ? <div className="box"> <div> {this.props.info.name} </div> </div>
+                        : <div className="box"> <div> {this.props.info.name} Reversed </div> </div>
                 }
-                <p> type: {this.props.info.type} </p>
-                <p> value: {this.props.info.value} </p>
+                <div className="box"> <div> {this.props.info.type} </div> </div>
                 {
                     this.props.number === 2
-                        ? <p> meaning: {this.props.info.meaning} </p>
-                        : <p> meaning: {this.props.info.meaningReverse} </p>
+                        ? <div className="box"> <div className="meanings"> {this.props.info.meaning} </div> </div>
+                        : <div className="box"> <div className="meanings"> {this.props.info.meaningReverse} </div> </div>
                 }
+                </div>
             </div>
         )
     }
