@@ -3,6 +3,7 @@ import { getAllTypedCards } from './utils/FetchUtils'
 import Deck from 'card-deck'
 import CombatItemComp from './CombatItemComp'
 import './CombatPage.css'
+import { getCardElement, getCardStrength } from './utils/CombatCardUtils'
 
 export default class CombatPage extends Component {
     state = {
@@ -39,8 +40,28 @@ export default class CombatPage extends Component {
         }
         this.setState({ enemy_affliction: elem })
 // This section will draw a random combat tarot card for the enemy and play it automatically.
+        this.doEnemyTurn();
+    }
 
-        
+    doEnemyTurn = async () => {
+// Initializing a new deck for the enemy to use.
+        const all_cards_data = await getAllTypedCards('minor');
+        let mungedCards = all_cards_data.filter(card => card.value <= 10);
+        var minorTarot = new Deck(mungedCards);
+// drawing the card the enemy will play.
+        let enemyCardObject = minorTarot.drawRandom(1)
+// This section will determin the element and the strength of the enemy card.
+        let enemyCardElement = getCardElement(enemyCardObject.suit)
+        let enemyCardBeats = getCardStrength(enemyCardElement)
+// Now the enemy uses the card!
+        if(this.state.user_affliction === enemyCardBeats) {
+            let userCritHealth = Number(this.state.user_health - (enemyCardObject.value * 2))
+            this.setState({ user_health: userCritHealth})
+        } else {
+            let userHealth = Number(this.state.user_health - enemyCardObject.value)
+            this.setState({ user_health: userHealth})
+        }
+        this.setState({ user_affliction: enemyCardElement})
     }
 
     render() {
