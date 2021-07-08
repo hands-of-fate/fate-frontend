@@ -24,14 +24,16 @@ export default class CombatPage extends Component {
         await this.doFetch();
     }
 
-    handleCardSelect = (e) => {
-        let enemyHealth = Number(this.state.enemy_health - e.target.value)
+    handleCardSelect = (val) => {
+        console.log(val, 'value')
+        let enemyHealth = Number(this.state.enemy_health - val)
         this.setState({ enemy_health: enemyHealth })
-        console.log(e.target.value, 'e target value')
-        console.log(this.state.enemy_health, 'enemy health')
+        
+        
     }
 
     render() {
+        console.log(this.state.enemy_health, 'enemy health')
         return (
             <div>
                 <section className='top-combat-section'></section>
