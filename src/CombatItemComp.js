@@ -5,7 +5,7 @@ export default class CombatItemComp extends Component {
     render() {
         let element = getCardElement(this.props.info.suit)
         return (
-            <button className="combat-button" onClick={this.props.event} value={this.props.info.value}>
+            <button className="combat-button" onClick={this.props.event} value={Number(this.props.info.value)}>
                 <p> {this.props.info.name} </p>
                 <p> {this.props.info.value} </p>
                 <p> {element}</p>

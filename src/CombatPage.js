@@ -8,7 +8,10 @@ export default class CombatPage extends Component {
         current_deck: [],
         current_hand: [],
         enemy_health: 20,
-        enemy_affliction: ''
+        enemy_affliction: '',
+        card_1_value: 0,
+        card_2_value: 0,
+        card_3_value: 0,
     }
 
     doFetch = async () => {
@@ -24,15 +27,14 @@ export default class CombatPage extends Component {
         await this.doFetch();
     }
 
-    handleCardSelect = async (e) => {
-        e.preventDefault()
-        console.log(e.target.value)
-        let enemyHealth = this.state.enemy_health - Number(e.target.value)
+    handleCardSelect = (e) => {
+        let enemyHealth = Number(this.state.enemy_health - e.target.value)
         this.setState({ enemy_health: enemyHealth })
+        console.log(e.target.value, 'e target value')
+        console.log(this.state.enemy_health, 'enemy health')
     }
 
     render() {
-        console.log(this.state.enemy_health)
         return (
             <div>
                 <section className='top-combat-section'></section>
