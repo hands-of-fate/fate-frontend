@@ -62,7 +62,7 @@ handleLogout = () => {
               exact
               render={(routerProps) =>
                 this.state.token
-                  ? <CombatPage token={this.state.token} />
+                  ? <CombatPage token={this.state.token} {...routerProps} />
                   : <Redirect to='/' />} 
             />
             <Route 

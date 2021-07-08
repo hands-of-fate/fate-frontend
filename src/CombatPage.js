@@ -4,6 +4,7 @@ import Deck from 'card-deck'
 import CombatItemComp from './CombatItemComp'
 import './CombatPage.css'
 import { getCardElement, getCardStrength } from './utils/CombatCardUtils'
+import { Link } from 'react-router-dom'
 
 export default class CombatPage extends Component {
     state = {
@@ -13,34 +14,49 @@ export default class CombatPage extends Component {
         user_affliction: 'Pure',
         enemy_health: 50,
         enemy_affliction: 'Pure',
-        enemy_card: []
+        enemy_card: [],
+        loss_trigger: false,
+        outcome: ''
     }
 
     doFetch = async () => {
         const all_cards_data = await getAllTypedCards('minor');
         let mungedCards = all_cards_data.filter(card => card.value <= 10);
         var minorTarot = new Deck(mungedCards);
-        this.setState({ current_deck: minorTarot.drawRandom(15)});
+        this.setState({ current_deck: minorTarot.drawRandom(56)});
         var currentDeck = new Deck(this.state.current_deck);
-        this.setState({ current_hand: currentDeck.drawRandom(3)});
+        this.setState({ current_hand: currentDeck.drawRandom(4)});
     }
 
     componentDidMount = async () => {
         await this.doFetch();
     }
 
-    handleCardSelect = (val, elem, beats) => {
+    handleCardSelect = async (val, elem, beats) => {
 // This section will check to see if the enemy is afflicted with any element and deal damage accordingly. After that, it will change the affliction.
         if(this.state.enemy_affliction === beats) {
             let enemyCritHealth = Number(this.state.enemy_health - (val * 2))
-            this.setState({ enemy_health: enemyCritHealth })
+            await this.setState({ enemy_health: enemyCritHealth })
         } else { 
             let enemyHealth = Number(this.state.enemy_health - val)
-            this.setState({ enemy_health: enemyHealth })
+            await this.setState({ enemy_health: enemyHealth })
         }
         this.setState({ enemy_affliction: elem })
 // This section will draw a random combat tarot card for the enemy and play it automatically.
-        this.doEnemyTurn();
+        if (this.state.enemy_health <= 0) {
+            //rewards
+            console.log('you won')
+        } else { 
+            await this.doEnemyTurn() 
+        }
+        // checking to see if user is still alive
+        if (this.state.user_health < 1) {
+            await this.setState({loss_trigger: true})
+        } else {
+            var newDeck = new Deck(this.state.current_deck)
+            let newHand = newDeck.drawRandom(4)
+            await this.setState({current_hand: newHand})
+        }
     }
 
     doEnemyTurn = async () => {
@@ -67,7 +83,17 @@ export default class CombatPage extends Component {
     render() {
         return (
             <div>
-                <section className='top-combat-section'></section>
+                <section className='top-combat-section'>
+                    <div></div>
+                    {
+                        this.state.loss_trigger
+                            ? <Link to='/home' >
+                                <button>Return</button>
+                            </Link>
+                            : <div></div>
+                    }
+                    <div></div>
+                </section>
                 <section className='bot-combat-section'>
                     <div className='bot-combat-left-div'>
                         <p className="number">Health: {this.state.user_health}</p>
