@@ -29,7 +29,6 @@ export default class CombatPage extends Component {
     }
 
     handleCardSelect = (val, elem) => {
-        console.log(elem)
         let enemyHealth = Number(this.state.enemy_health - val)
         this.setState({ enemy_health: enemyHealth, enemy_affliction: elem })
         
