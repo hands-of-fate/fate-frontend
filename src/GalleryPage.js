@@ -28,7 +28,6 @@ export default class GalleryPage extends Component {
                 <Link to='/home' >
                     <button>Home</button>
                 </Link>
-                <p>You have collected {this.state.user_all_cards.length}/78 cards</p> 
                 <div className="cardsLayout">
                 {
                     this.state.user_all_cards.map((card, i) => 
@@ -36,6 +35,7 @@ export default class GalleryPage extends Component {
                     )
                 }
                 </div>
+                <p className="inventory">You have collected {this.state.user_all_cards.length}/78 cards</p> 
             </div>
         )
     }
