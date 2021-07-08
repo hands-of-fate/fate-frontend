@@ -1,0 +1,21 @@
+.top-combat-section {
+    width: 100%;
+    height: 70vh
+}
+
+.bot-combat-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 5px double rgb(177, 163, 84);
+    background-color: rgba(59, 7, 59, 0.603);
+    height: 28vh;
+}
+.bot-combat-left-div, .bot-combat-right-div {
+    font-size: 2.5rem;
+}
+
+.number {
+    font-size: 3.5rem;
+}

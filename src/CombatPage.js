@@ -2,13 +2,17 @@ import React, { Component } from 'react'
 import { getAllTypedCards } from './utils/FetchUtils'
 import Deck from 'card-deck'
 import CombatItemComp from './CombatItemComp'
+import './CombatPage.css'
 
 export default class CombatPage extends Component {
     state = {
         current_deck: [],
         current_hand: [],
-        enemy_health: 20,
-        enemy_affliction: '',
+        user_health: 50,
+        user_affliction: 'Pure',
+        enemy_health: 50,
+        enemy_affliction: 'Pure',
+        enemy_card: []
     }
 
     doFetch = async () => {
@@ -24,27 +28,32 @@ export default class CombatPage extends Component {
         await this.doFetch();
     }
 
-    handleCardSelect = (val) => {
-        console.log(val, 'value')
+    handleCardSelect = (val, elem) => {
+        console.log(elem)
         let enemyHealth = Number(this.state.enemy_health - val)
-        this.setState({ enemy_health: enemyHealth })
+        this.setState({ enemy_health: enemyHealth, enemy_affliction: elem })
         
         
     }
 
     render() {
-        console.log(this.state.enemy_health, 'enemy health')
         return (
             <div>
                 <section className='top-combat-section'></section>
                 <section className='bot-combat-section'>
-                    <div className='bot-combat-left-div'></div>
+                    <div className='bot-combat-left-div'>
+                        <p className="number">Health: {this.state.user_health}</p>
+                        <p>Affliction: {this.state.user_affliction}</p>
+                    </div>
                     <div className='bot-combat-center-div'>
                         {
                             this.state.current_hand.map((card, i) => <CombatItemComp event={this.handleCardSelect} info={card} key={i} />)
                         }
                     </div>
-                    <div className='bot-combat-right-div'></div>
+                    <div className='bot-combat-right-div'>
+                        <p className="number">Health: {this.state.enemy_health}</p>
+                        <p>Affliction: {this.state.enemy_affliction}</p>
+                    </div>
                 </section>
             </div>
         )
