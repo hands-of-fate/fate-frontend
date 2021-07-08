@@ -9,9 +9,6 @@ export default class CombatPage extends Component {
         current_hand: [],
         enemy_health: 20,
         enemy_affliction: '',
-        card_1_value: 0,
-        card_2_value: 0,
-        card_3_value: 0,
     }
 
     doFetch = async () => {
