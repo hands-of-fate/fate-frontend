@@ -11,7 +11,7 @@ Component {
     render() {
         return (
             <div className='homepage-div'>
-                Home Page!
+                What Fate Do You Choose...
                 <section>
                     <label id="homepage-img">
                     <Link to='/gallery'>
