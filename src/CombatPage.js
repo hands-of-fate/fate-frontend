@@ -4,7 +4,6 @@ import Deck from 'card-deck'
 import CombatItemComp from './CombatItemComp'
 import './CombatPage.css'
 import { getCardElement, getCardStrength } from './utils/CombatCardUtils'
-import { Link } from 'react-router-dom'
 
 export default class CombatPage extends Component {
     state = {
@@ -44,8 +43,7 @@ export default class CombatPage extends Component {
         this.setState({ enemy_affliction: elem })
 // This section will draw a random combat tarot card for the enemy and play it automatically.
         if (this.state.enemy_health <= 0) {
-            //rewards
-            console.log('you won')
+            setTimeout(() =>  this.props.history.push('/rewards'), 1000)
         } else { 
             await this.doEnemyTurn() 
         }
@@ -86,6 +84,8 @@ export default class CombatPage extends Component {
             this.props.history.push('/home')
         }
     }
+
+
 
     render() {
         return (
