@@ -43,3 +43,9 @@ export async function checkIfOwned(cardName, userCardsArray) {
             return true;
     } return false;
 }
+
+export async function getAllTypedCards(type) {
+    const data = await request
+        .get(`${URL}/cards/${type}`)
+    return data.body
+}
