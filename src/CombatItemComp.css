@@ -1,0 +1,20 @@
+.combat-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    border: 1px solid gold;
+    border-radius: 30px;
+    height: 200px;
+    width: 120px;
+    justify-content: center;
+    background-image: url('./assests/tarotBack.jpg');
+    background-size: contain;
+    position: relative;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #ebbf3dfb;
+}

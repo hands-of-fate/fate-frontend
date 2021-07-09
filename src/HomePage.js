@@ -17,7 +17,7 @@ Component {
                     <Link to='/gallery'>
                             <button id='past'>
                                 <div className='button-img'>
-                                    Gallery
+                                    A Glipse Into The Past
                                 </div>
                         </button>
                     </Link>
@@ -34,7 +34,7 @@ Component {
                     <Link to='/readings'>
                             <button id='future'>
                                 <div className='button-img'>
-                                    Future
+                                    Read Into Your Future
                                 </div></button>
                     </Link>
                     </label>
