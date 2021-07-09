@@ -14,6 +14,7 @@ import GalleryPage from "./GalleryPage.js";
 import CombatPage from "./CombatPage.js";
 import ReadingsPage from "./ReadingsPage.js";
 import RewardsPage from "./RewardsPage.js";
+import CreditsPage from "./CreditsPage.js";
 
 
 export default class App extends Component {
@@ -81,7 +82,12 @@ handleLogout = () => {
                 this.state.token
                   ? <RewardsPage token={this.state.token} {...routerProps} />
                   : <Redirect to='/' />} 
-            />
+              />
+              <Route 
+              path="/credits" 
+              exact
+              render={(routerProps) => <CreditsPage login={this.handleLogin}  {...routerProps} />} 
+            /> 
           </Switch>
         </div>
         </div>
