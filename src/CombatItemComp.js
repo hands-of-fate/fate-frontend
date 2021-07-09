@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { getCardElement, getCardStrength } from './utils/CombatCardUtils'
+import './CombatItemComp.css';
 
 export default class CombatItemComp extends Component {
     render() {
@@ -7,9 +8,9 @@ export default class CombatItemComp extends Component {
         let beats = getCardStrength(element)
         return (
             <button className="combat-button" onClick={() => this.props.event(this.props.info.value, element, beats)}>
-                <p> {this.props.info.name} </p>
-                <p> {this.props.info.value} </p>
-                <p> {element}</p>
+                <p className="card-info"> {this.props.info.name} </p>
+                <p className="card-info"> {this.props.info.value} </p>
+                <p className="card-info"> {element}</p>
             </button>
         )
     }
