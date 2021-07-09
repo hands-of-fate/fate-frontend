@@ -7,7 +7,8 @@ import './GalleryPage.css';
 export default class GalleryPage extends Component {
     state = {
         all_cards: [],
-        user_all_cards: []
+        user_all_cards: [],
+        unique_cards: 0
     }
     componentDidMount = async () => {
         await this.doFetch();
@@ -17,10 +18,10 @@ export default class GalleryPage extends Component {
         const all_cards_data = await getAllCards();
         const user_all_cards_data = await getAllUserCards(this.props.token);
         const uniqueCards = doUniqueCards(user_all_cards_data)
-        console.log(uniqueCards, '------')
         this.setState({ 
             all_cards: all_cards_data, 
-            user_all_cards: user_all_cards_data 
+            user_all_cards: user_all_cards_data ,
+            unique_cards: uniqueCards
         })
     }
 
@@ -48,7 +49,7 @@ export default class GalleryPage extends Component {
                             
                     }
                 </div>
-                <p className="inventory">You have collected {this.state.user_all_cards ? 0 : 0}/78 cards</p> 
+                <p className="inventory">You have collected {this.state.unique_cards}/78 cards</p> 
             </div>
         )
     }
