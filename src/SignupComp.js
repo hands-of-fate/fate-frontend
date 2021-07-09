@@ -33,17 +33,12 @@ export default class SignupComp extends Component {
             <>
                 <form onSubmit={this.handleSubmit}>
                 Sign up!
-                <br />
                     <label>
-                        Email: &nbsp;
-                        <input type="email" onChange={this.handleEmailChange}/>
+                        <input type="email" onChange={this.handleEmailChange} placeholder='EMAIL' />
                     </label>
-                    <br />
                     <label>
-                        Password: &nbsp;
-                        <input type="password" onChange={this.handlePasswordChange}/>
+                        <input type="password" onChange={this.handlePasswordChange} placeholder='PASSWORD' />
                     </label>
-                    <br />
                     <button>Sign up!</button>
                 </form>
             </>

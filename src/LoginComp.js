@@ -31,17 +31,12 @@ export default class LoginComp extends Component {
             <>
                 <form onSubmit={this.handleSubmit}>
                 log in!
-                <br />
                     <label>
-                        email: &nbsp;
-                        <input type="email" onChange={this.handleEmailChange}/>
+                        <input type="email" onChange={this.handleEmailChange} placeholder='EMAIL' />
                     </label>
-                    <br />
                     <label>
-                        password: &nbsp;
-                        <input type="password" onChange={this.handlePasswordChange}/>
+                        <input type="password" onChange={this.handlePasswordChange} placeholder='PASSWORD' />
                     </label>
-                    <br />
                     <button>Login!</button>
                 </form>
             </>

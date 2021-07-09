@@ -22,4 +22,25 @@ form{
     margin-top: 20px;
     margin-right: 20px;
     margin-left: 20px;
+    color: gold;
+    font-size: 3rem;
+}
+
+a {
+    color: rgba(190, 192, 90, 0.884);
+    text-decoration: none;
+    font-size: 5rem;
+}
+
+a:hover {
+    text-shadow: 2px 2px 2px greenyellow;
+}
+
+button {
+    background-color: rgba(90, 71, 102, 0.671);
+    color: gold;
+}
+
+button:hover {
+        box-shadow: 2px 2px 2px 2px gold;
 }
