@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { signup } from './utils/FetchUtils.js'
+import { newUserStarterCard, signup } from './utils/FetchUtils.js'
 import './SignupComp.css'
 
 export default class SignupComp extends Component {
@@ -12,6 +12,7 @@ export default class SignupComp extends Component {
         e.preventDefault();
         const token = await signup(this.state.email, this.state.password);
         this.props.login(token)
+        newUserStarterCard(token)
         this.props.history.push('/home')
     }
 

@@ -10,8 +10,7 @@ export default class LoginComp extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         const token = await login(this.state.email, this.state.password);
-        this.props.login(token)
-        console.log(this.props)
+        await this.props.login(token)
         this.props.history.push('/home')
     }
 

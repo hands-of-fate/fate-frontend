@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { addCard, getAllCards } from './utils/FetchUtils'
 import Deck from 'card-deck'
 import RewardItemsComp from './RewardItemsComp'
-
+import './RewardItemsComp.css'
 
 export default class RewardsPage extends Component {
     state = {
@@ -31,7 +31,6 @@ export default class RewardsPage extends Component {
 
     render() {
         return (
-            <div>
                 <div className="layout">
                 {
                     this.state.reward_cards.map((card, i) => 
@@ -39,7 +38,6 @@ export default class RewardsPage extends Component {
                     )
                 }
                 </div>
-            </div>
         )
     }
 }
