@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import { getAllCards, getAllUserCards } from './utils/FetchUtils'
+import { /*checkIfOwned,*/ doUniqueCards, getAllCards, getAllUserCards } from './utils/FetchUtils'
 import GalleryItemComp from './GalleryItemComp';
 import './GalleryPage.css';
 
@@ -16,12 +16,23 @@ export default class GalleryPage extends Component {
     doFetch = async () => {
         const all_cards_data = await getAllCards();
         const user_all_cards_data = await getAllUserCards(this.props.token);
+        const uniqueCards = doUniqueCards(user_all_cards_data)
+        console.log(uniqueCards, '------')
         this.setState({ 
             all_cards: all_cards_data, 
             user_all_cards: user_all_cards_data 
         })
     }
 
+    // doUniqueCards = async (userCards, allCards) => {
+    //     let counter = 0
+    //     for(let card of userCards) {
+    //         if(checkIfOwned(card.name, allCards)) {
+    //             counter = counter + 1
+    //         }
+    //     }
+    //     return counter
+    // }
     render() {
         console.log(this.state.user_all_cards)
         return (
@@ -37,7 +48,7 @@ export default class GalleryPage extends Component {
                             
                     }
                 </div>
-                <p className="inventory">You have collected {this.state.user_all_cards ? this.state.user_all_cards.length : 0}/78 cards</p> 
+                <p className="inventory">You have collected {this.state.user_all_cards ? 0 : 0}/78 cards</p> 
             </div>
         )
     }

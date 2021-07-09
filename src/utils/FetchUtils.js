@@ -33,7 +33,6 @@ export async function getAllUserCards(token) {
         .get(`${URL}/api/players`)
         .set('Authorization', token)
     const mungedData = (data.body[0])
-    console.log(mungedData)
     if (mungedData) {
         return mungedData.all_cards
     } else {
@@ -78,4 +77,16 @@ export async function newUserStarterCard(token) {
         .set('Authorization', token)
     console.log(response)
     return response.body
+}
+
+export function doUniqueCards(userCards) {
+    let uniqueDeck = []
+    for(let userCard of userCards) {
+        for(let uniqueCard of uniqueDeck) {
+            if(!userCard.name === uniqueCard.name) {
+                uniqueDeck.push(userCard)
+            }
+        }
+    }
+    return uniqueDeck.length
 }
