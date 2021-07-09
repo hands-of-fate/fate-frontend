@@ -22,20 +22,22 @@ export default class GalleryPage extends Component {
         })
     }
 
-    render(){
+    render() {
+        console.log(this.state.user_all_cards)
         return (
             <div className="entireLayout">
                 <Link to='/home' >
                     <button>Home</button>
                 </Link>
                 <div className="cardsLayout">
-                {
-                    this.state.user_all_cards.map((card, i) => 
-                            <GalleryItemComp info={card} key={i} />
-                    )
-                }
+                    {
+                        this.state.user_all_cards
+                            ? this.state.user_all_cards.map((card, i) => <GalleryItemComp info={card} key={i} />)
+                            : <div></div>
+                            
+                    }
                 </div>
-                <p className="inventory">You have collected {this.state.user_all_cards.length}/78 cards</p> 
+                <p className="inventory">You have collected {this.state.user_all_cards ? this.state.user_all_cards.length : 0}/78 cards</p> 
             </div>
         )
     }

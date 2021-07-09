@@ -4,7 +4,6 @@ import Deck from 'card-deck'
 import CombatItemComp from './CombatItemComp'
 import './CombatPage.css'
 import { getCardElement, getCardStrength } from './utils/CombatCardUtils'
-import { Link } from 'react-router-dom'
 
 export default class CombatPage extends Component {
     state = {
@@ -44,14 +43,14 @@ export default class CombatPage extends Component {
         this.setState({ enemy_affliction: elem })
 // This section will draw a random combat tarot card for the enemy and play it automatically.
         if (this.state.enemy_health <= 0) {
-            //rewards
-            console.log('you won')
+            setTimeout(() =>  this.props.history.push('/rewards'), 1000)
         } else { 
             await this.doEnemyTurn() 
         }
         // checking to see if user is still alive
         if (this.state.user_health < 1) {
-            await this.setState({loss_trigger: true})
+            await this.setState({ loss_trigger: true })
+            setTimeout(() => this.doGameOver(), 1000)
         } else {
             var newDeck = new Deck(this.state.current_deck)
             let newHand = newDeck.drawRandom(4)
@@ -80,18 +79,19 @@ export default class CombatPage extends Component {
         this.setState({ user_affliction: enemyCardElement})
     }
 
+    doGameOver = () => {
+        if (this.state.loss_trigger) {
+            this.props.history.push('/home')
+        }
+    }
+
+
+
     render() {
         return (
             <div>
                 <section className='top-combat-section'>
                     <div></div>
-                    {
-                        this.state.loss_trigger
-                            ? <Link to='/home' >
-                                <button>Return</button>
-                            </Link>
-                            : <div></div>
-                    }
                     <div></div>
                 </section>
                 <section className='bot-combat-section'>

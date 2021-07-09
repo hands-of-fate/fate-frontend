@@ -13,6 +13,7 @@ import './App.css';
 import GalleryPage from "./GalleryPage.js";
 import CombatPage from "./CombatPage.js";
 import ReadingsPage from "./ReadingsPage.js";
+import RewardsPage from "./RewardsPage.js";
 
 
 export default class App extends Component {
@@ -71,6 +72,14 @@ handleLogout = () => {
               render={(routerProps) =>
                 this.state.token
                   ? <ReadingsPage token={this.state.token} />
+                  : <Redirect to='/' />} 
+              />
+              <Route
+              path="/rewards" 
+              exact
+              render={(routerProps) =>
+                this.state.token
+                  ? <RewardsPage token={this.state.token} {...routerProps} />
                   : <Redirect to='/' />} 
             />
           </Switch>
