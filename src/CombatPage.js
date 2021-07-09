@@ -36,6 +36,9 @@ export default class CombatPage extends Component {
         if(this.state.enemy_affliction === beats) {
             let enemyCritHealth = Number(this.state.enemy_health - (val * 2))
             await this.setState({ enemy_health: enemyCritHealth })
+        } else if(getCardStrength(this.state.enemy_affliction) === elem) {
+            let enemyCritFailHealth = Number(this.state.enemy_health - Math.round(val / 2))
+            await this.setState({ enemy_health: enemyCritFailHealth})
         } else { 
             let enemyHealth = Number(this.state.enemy_health - val)
             await this.setState({ enemy_health: enemyHealth })
@@ -92,13 +95,23 @@ export default class CombatPage extends Component {
             <div>
                 <section className='top-combat-section'>
                     <div>
+                        <img src="./assests/the-fool.png" alt="One at the start of their journey" className="the-hero"/>
                     </div>
-                    <div></div>
+                    <div>
+                        <img src='./assets/qtip.png' alt='Those who would uphold' className='enemies' />
+                    </div>
                 </section>
                 <section className='bot-combat-section'>
                     <div className='bot-combat-left-div'>
-                        <p className="number">Health: {this.state.user_health}</p>
-                        <p>Affliction: {this.state.user_affliction}</p>
+                        <p>
+                            - The Fool -
+                        </p>
+                        <p className="number">
+                            Health: {this.state.user_health}
+                        </p>
+                        <p>
+                            Affliction: {this.state.user_affliction}
+                        </p>
                     </div>
                     <div className='bot-combat-center-div'>
                         {
@@ -106,8 +119,15 @@ export default class CombatPage extends Component {
                         }
                     </div>
                     <div className='bot-combat-right-div'>
-                        <p className="number">Health: {this.state.enemy_health}</p>
-                        <p>Affliction: {this.state.enemy_affliction}</p>
+                        <p>
+                            - The Will of Fate -
+                        </p>
+                        <p className="number">
+                            Health: {this.state.enemy_health}
+                        </p>
+                        <p>
+                            Affliction: {this.state.enemy_affliction}
+                        </p>
                     </div>
                 </section>
             </div>

@@ -18,6 +18,10 @@ const suitElement = [
         "suit": "swords",
         "element": "air",
         "beats": "earth"
+    },
+    {
+        "element": "Pure",
+        "beats": "none"
     }
 ]
 

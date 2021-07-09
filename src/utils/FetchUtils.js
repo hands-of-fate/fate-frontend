@@ -82,11 +82,8 @@ export async function newUserStarterCard(token) {
 export function doUniqueCards(userCards) {
     let uniqueDeck = []
     for(let userCard of userCards) {
-        for(let uniqueCard of uniqueDeck) {
-            if(!userCard.name === uniqueCard.name) {
-                uniqueDeck.push(userCard)
-            }
-        }
+        uniqueDeck.push(userCard.name)
     }
-    return uniqueDeck.length
+    let output = uniqueDeck.filter((x, i, a) => a.indexOf(x) === i)
+    return output.length
 }
