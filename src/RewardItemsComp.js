@@ -14,7 +14,7 @@ export default class RewardItemsComp extends Component {
                 <p>
                     {this.props.info.value}
                 </p>
-                <button>Add To Collection!</button>
+                <button onClick={() => this.props.event(this.props.info)}>Add To Collection!</button>
             </div>
         )
     }

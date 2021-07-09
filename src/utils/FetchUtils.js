@@ -33,8 +33,9 @@ export async function getAllUserCards(token) {
         .get(`${URL}/api/players`)
         .set('Authorization', token)
     const mungedData = (data.body[0])
-    
-    return mungedData.all_cards;
+    console.log(mungedData)
+    if (mungedData)
+        return mungedData.all_cards
 }
 
 export async function checkIfOwned(cardName, userCardsArray) {
@@ -48,4 +49,14 @@ export async function getAllTypedCards(type) {
     const data = await request
         .get(`${URL}/cards/${type}`)
     return data.body
+}
+
+export async function addCard(token, cardData) {
+    const existingCards = await getAllUserCards(token)
+    existingCards.push(cardData)
+    const { body } = await request
+        .put(`${URL}/api/players`)
+        .send({ all_cards: JSON.stringify(existingCards) })
+        .set('Authorization', token)
+    return [body]
 }

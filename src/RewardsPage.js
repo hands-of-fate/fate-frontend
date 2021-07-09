@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getAllCards } from './utils/FetchUtils'
+import { addCard, getAllCards } from './utils/FetchUtils'
 import Deck from 'card-deck'
 import RewardItemsComp from './RewardItemsComp'
 
@@ -7,7 +7,8 @@ import RewardItemsComp from './RewardItemsComp'
 export default class RewardsPage extends Component {
     state = {
         reward_cards: [],
-        all_cards: []
+        all_cards: [],
+        chosen_card: []
     }
 
     doFetch = async () => {
@@ -23,13 +24,18 @@ export default class RewardsPage extends Component {
         await this.doFetch();
     }
 
+    addToCollection = async (cardInfo) => {
+        await addCard(this.props.token, cardInfo)
+        this.props.history.push('/home')
+    }
+
     render() {
         return (
             <div>
                 <div className="layout">
                 {
                     this.state.reward_cards.map((card, i) => 
-                        <RewardItemsComp info={card} key={i} /> 
+                        <RewardItemsComp event={this.addToCollection} info={card} key={i} />
                     )
                 }
                 </div>
