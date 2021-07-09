@@ -34,8 +34,11 @@ export async function getAllUserCards(token) {
         .set('Authorization', token)
     const mungedData = (data.body[0])
     console.log(mungedData)
-    if (mungedData)
+    if (mungedData) {
         return mungedData.all_cards
+    } else {
+        return []
+    }
 }
 
 export async function checkIfOwned(cardName, userCardsArray) {
@@ -59,4 +62,20 @@ export async function addCard(token, cardData) {
         .send({ all_cards: JSON.stringify(existingCards) })
         .set('Authorization', token)
     return [body]
+}
+
+export async function newUserStarterCard(token) {
+    const newStart = [{
+        "name": "The Fool",
+        "type": "major",
+        "value": 0,
+        "meaning": "Folly, mania, extravagance, intoxication, delirium, frenzy, bewrayment.",
+        "meaningReverse": "Negligence, absence, distribution, carelessness, apathy, nullity, vanity."
+    }]
+    const response = await request
+        .post(`${URL}/api/players`)
+        .send({ all_cards: JSON.stringify(newStart) })
+        .set('Authorization', token)
+    console.log(response)
+    return response.body
 }
