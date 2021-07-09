@@ -41,8 +41,8 @@ export async function getAllUserCards(token) {
     }
 }
 
-export async function checkIfOwned(cardName, userCardsArray) {
-    for(let card of userCardsArray){
+export async function checkIfOwned(cardName, allCardsArray) {
+    for(let card of allCardsArray){
         if(card.name === cardName)
             return true;
     } return false;

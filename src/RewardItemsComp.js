@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class RewardItemsComp extends Component {
     render() {
         return (
-            <div className="rewardCards">
+            <button className="rewardCards" onClick={() => this.props.event(this.props.info)}>
                 <p>
                     {this.props.info.name}
                 </p>
@@ -13,8 +13,7 @@ export default class RewardItemsComp extends Component {
                 <p>
                     {this.props.info.value}
                 </p>
-                <button onClick={() => this.props.event(this.props.info)}>Add To Collection!</button>
-            </div>
+            </button>
         )
     }
 }
