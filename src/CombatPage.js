@@ -4,6 +4,8 @@ import Deck from 'card-deck'
 import CombatItemComp from './CombatItemComp'
 import './CombatPage.css'
 import { getCardElement, getCardStrength } from './utils/CombatCardUtils'
+import Hero from './assests/the-fool.png'
+import Baddie from './assests/bad-back.png'
 
 export default class CombatPage extends Component {
     state = {
@@ -95,10 +97,10 @@ export default class CombatPage extends Component {
             <div>
                 <section className='top-combat-section'>
                     <div>
-                        <img src='./assests/the-fool.png' alt='One at the start of their journey' className='the-hero'/>
+                        <img src={Hero} alt='One at the start of their journey' className='the-hero'/>
                     </div>
                     <div>
-                        <img src='./assets/qtip.png' alt='Those who would uphold' className='enemies' />
+                        <img src={Baddie} alt='Those who would uphold' className='enemies' />
                     </div>
                 </section>
                 <section className='bot-combat-section'>
