@@ -91,7 +91,8 @@ export default class CombatPage extends Component {
         return (
             <div>
                 <section className='top-combat-section'>
-                    <div></div>
+                    <div>
+                    </div>
                     <div></div>
                 </section>
                 <section className='bot-combat-section'>
