@@ -1,6 +1,6 @@
 .credits-div {
     background-image: url('./assests/tarotBack.jpg');
-    height: 500px;
+    height: 50vh;
     width: 300px;
     border-radius: 30px;
     background-size: cover;
@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: center;
     font-family: 'Noggovoso Personal Use';
-    font-size: 5rem;
+    font-size: 3rem;
     padding: 0px, 0px;
     color: #ebbf3dfb;
     right: 20px;
@@ -21,7 +21,7 @@
 
 .section-top, .section-bot {
     width: 100vw;
-    height: 30vh;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -29,10 +29,25 @@
 
 .section-mid {
     width: 100vw;
-    height: 40vh;
+    height: 60vh;
     display: flex;
     flex-direction: row;
     text-align: center;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.blurb {
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box {
+    background-color: rgba(0, 0, 0, 0.575);
+}
+
+a {
+    color: rgb(111, 0, 255);
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
