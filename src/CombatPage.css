@@ -19,3 +19,8 @@
 .number {
     font-size: 3.5rem;
 }
+
+.bot-combat-center-div {
+    display: flex;
+    flex-direction: row;
+}
