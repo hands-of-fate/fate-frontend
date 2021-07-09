@@ -1,0 +1,57 @@
+.homepage-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    font-size: 7.5rem;
+    color: #ebbf3dfb;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+}
+
+#homepage-img{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    border: 1px solid rgb(255, 255, 255);
+    background-image: url('./assests/tarotBack.jpg');
+    border-radius: 30px;
+    height: 500px;
+    width: 300px;
+    justify-content: center;
+    justify-items: center;
+    background-color: rgba(53, 48, 75, 0.541);
+    background-size: contain;
+    margin-top: 80px;
+    margin-right: 70px;
+    margin-left: 70px;
+
+}
+.button-img {
+    background-image: url('./assests/tarotBack.jpg');
+    height: 500px;
+    width: 300px;
+    border-radius: 30px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Noggovoso Personal Use';
+    font-size: 5rem;
+    padding: 0px, 0px;
+    color: #ebbf3dfb;
+    right: 20px;
+}
+
+#past, #present, #future {
+    height: 500px;
+    width: 300px;
+    border-radius: 30px;
+    position: relative;
+}

@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    height: 500px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(53, 48, 75, 0.541);
+    background-image: url('./assests/tarotBack.jpg');
+    background-size: 100%, contain;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+}

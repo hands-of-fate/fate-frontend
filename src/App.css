@@ -1,38 +1,32 @@
-.App {
-  text-align: center;
+.gradient {
+  background: hsla(217, 96%, 11%, 1);
+
+  background: linear-gradient(270deg, hsla(217, 96%, 11%, 1) 11%, hsla(251, 31%, 24%, 1) 56%, hsla(286, 31%, 24%, 1) 74%, hsla(326, 54%, 28%, 1) 90%, hsla(354, 46%, 32%, 1) 100%);
+  
+  background: -moz-linear-gradient(270deg, hsla(217, 96%, 11%, 1) 11%, hsla(251, 31%, 24%, 1) 56%, hsla(286, 31%, 24%, 1) 74%, hsla(326, 54%, 28%, 1) 90%, hsla(354, 46%, 32%, 1) 100%);
+  
+  background: -webkit-linear-gradient(270deg, hsla(217, 96%, 11%, 1) 11%, hsla(251, 31%, 24%, 1) 56%, hsla(286, 31%, 24%, 1) 74%, hsla(326, 54%, 28%, 1) 90%, hsla(354, 46%, 32%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#011638", endColorstr="#312a50", GradientType=1 );
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.overall-body{
+  background-image: url('https://i.pinimg.com/originals/8b/30/71/8b3071feeff83f1e4a63ed231562ff0c.gif'), url('./assests/fresh.png');
+  background-size: 10% 10%, 100% 100%;
+  background-repeat: repeat, no-repeat;
+  height: 100vh;
+  width: 100vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+    font-family: 'Noggovoso Personal Use';
+    src: url('./assests/NoggovosoPersonalUse-Regular.eot');
+    src: url('./assests/NoggovosoPersonalUse-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assests/NoggovosoPersonalUse-Regular.woff2') format('woff2'),
+        url('./assests/NoggovosoPersonalUse-Regular.woff') format('woff'),
+        url('./assests/NoggovosoPersonalUse-Regular.ttf') format('truetype'),
+        url('./assests/NoggovosoPersonalUse-Regular.svg#NoggovosoPersonalUse-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }

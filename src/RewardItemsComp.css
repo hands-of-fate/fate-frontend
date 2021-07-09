@@ -1,0 +1,27 @@
+.rewardCards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    height: 500px;
+    width: 300px;
+    justify-content: center;
+    background-image: url('./assests/reward-card.png');
+    background-size: contain;
+    position: relative;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 2.5rem;
+    text-align: center;
+    backface-visibility: hidden;
+}
+
+.layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0;
+}
