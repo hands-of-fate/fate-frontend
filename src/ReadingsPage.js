@@ -29,7 +29,7 @@ export default class ReadingsPage extends Component {
         
         return (
             <div className="readingPageContainer">
-                <div className="readingTitle">GETCHA TAROT READ</div>
+                <div className="readingTitle">Tarot Reading</div>
                 <Link to='/home' >
                     <button>Home</button>
                 </Link>

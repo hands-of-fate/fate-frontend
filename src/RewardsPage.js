@@ -31,13 +31,15 @@ export default class RewardsPage extends Component {
 
     render() {
         return (
+            <>
+                <div className="rewardsTitle">Rewards</div>
                 <div className="layout">
                 {
                     this.state.reward_cards.map((card, i) => 
                         <RewardItemsComp event={this.addToCollection} info={card} key={i} />
                     )
                 }
-                </div>
+                </div></>
         )
     }
 }
