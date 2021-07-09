@@ -12,7 +12,7 @@ import eye from './assests/eye.png'
 import face from './assests/face.png'
 import hands from './assests/hands.png'
 import Rules from './assests/element-wheel.png'
-import Q from 'q'
+
 
 export default class CombatPage extends Component {
     state = {
@@ -101,8 +101,8 @@ export default class CombatPage extends Component {
 
     render() {
         let baddies = [badBack, disco, eye, face, hands, qtip]
-        let number = Math.ceil(Math.random() * baddies.length)
-        let Enemy = baddies[number]
+        const number = Math.ceil(Math.random() * baddies.length)
+        const Enemy = baddies[number]
         return (
             <div>
                 <section className='top-combat-section'>
