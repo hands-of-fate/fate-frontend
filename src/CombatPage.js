@@ -5,7 +5,8 @@ import CombatItemComp from './CombatItemComp'
 import './CombatPage.css'
 import { getCardElement, getCardStrength } from './utils/CombatCardUtils'
 import Hero from './assests/the-fool.png'
-import Baddie from './assests/bad-back.png'
+import Baddie from './assests/the-better-bad-back.png'
+import Rules from './assests/element-wheel.png'
 
 export default class CombatPage extends Component {
     state = {
@@ -96,8 +97,11 @@ export default class CombatPage extends Component {
         return (
             <div>
                 <section className='top-combat-section'>
-                    <div>
+                    <div className="hero-div">
                         <img src={Hero} alt='One at the start of their journey' className='the-hero'/>
+                    </div>
+                    <div className="guide">
+                        <img src={Rules} alt='A guide on how to play' className='rules'/>
                     </div>
                     <div>
                         <img src={Baddie} alt='Those who would uphold' className='enemies' />
