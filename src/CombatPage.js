@@ -5,7 +5,14 @@ import CombatItemComp from './CombatItemComp'
 import './CombatPage.css'
 import { getCardElement, getCardStrength } from './utils/CombatCardUtils'
 import Hero from './assests/the-fool.png'
-import Baddie from './assests/bad-back.png'
+import qtip from './assests/qtip.png'
+import badBack from './assests/bad-back.png'
+import disco from './assests/disco.png'
+import eye from './assests/eye.png'
+import face from './assests/face.png'
+import hands from './assests/hands.png'
+import Rules from './assests/element-wheel.png'
+import Q from 'q'
 
 export default class CombatPage extends Component {
     state = {
@@ -93,14 +100,20 @@ export default class CombatPage extends Component {
 
 
     render() {
+        let baddies = [badBack, disco, eye, face, hands, qtip]
+        let number = Math.ceil(Math.random() * baddies.length)
+        let Enemy = baddies[number]
         return (
             <div>
                 <section className='top-combat-section'>
-                    <div>
+                    <div className="hero-div">
                         <img src={Hero} alt='One at the start of their journey' className='the-hero'/>
                     </div>
-                    <div>
-                        <img src={Baddie} alt='Those who would uphold' className='enemies' />
+                    <div className="guide">
+                        <img src={Rules} alt='A guide on how to play' className='rules'/>
+                    </div>
+                    <div className="baddie-div">
+                        <img src={Enemy} alt='Those who would uphold' className='enemies' />
                     </div>
                 </section>
                 <section className='bot-combat-section'>
