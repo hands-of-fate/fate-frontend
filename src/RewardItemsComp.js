@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './RewardItemsComp.css'
 
 export default class RewardItemsComp extends Component {
     render() {

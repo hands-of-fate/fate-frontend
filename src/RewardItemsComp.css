@@ -18,3 +18,10 @@
     text-align: center;
     backface-visibility: hidden;
 }
+
+.layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0;
+}
