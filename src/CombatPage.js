@@ -97,7 +97,9 @@ export default class CombatPage extends Component {
                     <div>
                         <img src='./assests/the-fool.png' alt='One at the start of their journey' className='the-hero'/>
                     </div>
-                    <div></div>
+                    <div>
+                        <img src='./assets/qtip.png' alt='Those who would uphold' className='enemies' />
+                    </div>
                 </section>
                 <section className='bot-combat-section'>
                     <div className='bot-combat-left-div'>
