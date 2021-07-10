@@ -11,14 +11,25 @@ export default class ReadingItemComp extends Component {
                 <div className="outerBox">
                 {
                     this.props.number === 2
-                        ? <div className="box"> <div> {this.props.info.name} </div> </div>
-                        : <div className="box"> <div> {this.props.info.name} Reversed </div> </div>
+                    // getting a little div-soupy here, but, hey, that's life! Maybe some newlines and tabs can make it more readable
+                        ? <div className="box">
+                            <div> {this.props.info.name} </div> 
+                        </div>
+                        : <div className="box"> 
+                            <div> {this.props.info.name} Reversed </div> 
+                        </div>
                 }
-                <div className="box"> <div> {this.props.info.type} </div> </div>
+                <div className="box"> 
+                    <div> {this.props.info.type} </div> 
+                </div>
                 {
                     this.props.number === 2
-                        ? <div className="box"> <div className="meanings"> {this.props.info.meaning} </div> </div>
-                        : <div className="box"> <div className="meanings"> {this.props.info.meaningReverse} </div> </div>
+                        ? <div className="box"> 
+                            <div className="meanings"> {this.props.info.meaning} </div> 
+                        </div>
+                        : <div className="box"> 
+                            <div className="meanings"> {this.props.info.meaningReverse} </div>
+                        </div>
                 }
                 </div>
             </div>

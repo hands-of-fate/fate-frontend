@@ -80,10 +80,12 @@ export async function newUserStarterCard(token) {
 }
 
 export function doUniqueCards(userCards) {
-    let uniqueDeck = []
+    // no need for a let, since you never reassign this--you mutate the array, but that's not reassignment
+    const cardNames = []
     for(let userCard of userCards) {
-        uniqueDeck.push(userCard.name)
+        cardNames.push(userCard.name)
     }
-    let output = uniqueDeck.filter((x, i, a) => a.indexOf(x) === i)
+    // is this working? it seems like i (the index) would never match the card name?
+    const output = cardNames.filter((cardName, i, a) => a.indexOf(cardName) === i)
     return output.length
 }

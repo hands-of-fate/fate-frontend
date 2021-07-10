@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { login } from './utils/FetchUtils.js';
 
-export default class LoginComp extends Component {
+// it's kind of non standard to have a component with the word "component" in the title. It should be apparent through context when something is a component
+export default class Login extends Component {
     state = {
         email: '',
         password: ''

@@ -1,15 +1,20 @@
 import { suitElement } from '../data/MinorArcanaEffects'
 
-export function getCardElement(cardSuit) {
+// probably an unnecessary abstraction, but, hey, slightly less code duplication!
+export function getCardProperty(cardSuit, strengthOrElement) {
+    const suitOrElement = strengthOrElement === 'strength' ? 'suit' : 'element';
+    const beatsOrElement = strengthOrElement === 'strength' ? 'beats' : 'element';
+
     let smelement = suitElement
-    let array = smelement.filter(object => cardSuit === object.suit)
-    let string = array[0].element
+    let array = smelement.filter(object => cardSuit === object[suitOrElement])
+    let string = array[0][beatsOrElement]
     return string
 }
 
+export function getCardElement(cardSuit) {
+    return getCardProperty(cardSuit, 'element');
+}
+
 export function getCardStrength(cardElement) {
-    let smelement = suitElement
-    let array = smelement.filter(object => cardElement === object.element)
-    let string = array[0].beats
-    return string
+    return getCardProperty(cardSuit, 'strength');
 }
