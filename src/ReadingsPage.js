@@ -13,7 +13,7 @@ export default class ReadingsPage extends Component {
 
     doFetch = async () => {
         const all_cards_data = await getAllCards();
-        var fullDeck = new Deck(all_cards_data);
+        const fullDeck = new Deck(all_cards_data);
         this.setState({ 
             all_cards: all_cards_data,
             reading: fullDeck.drawRandom(3)

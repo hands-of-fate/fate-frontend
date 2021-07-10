@@ -5,6 +5,7 @@ import './CreditsPage.css'
 export default class CreditsPage extends Component {
     render() {
         return (
+            // would have liked to see some json data that you mapped over, instead of copying and pasting the same HTML over and over
             <div className="credits-overall"> 
                 <section className="section-top title">
                     <div><Link className="go-home" to='/'>

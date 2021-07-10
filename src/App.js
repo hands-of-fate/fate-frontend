@@ -1,3 +1,5 @@
+// In an app with this many components, it probably makes sense to start separating your files out into more directories, or else you'll end up with 100 components all siblings to each other, which gets difficult to maintain, especially for any new coder who might find themselves inheriting this project. Maybe a folder for every component (along with its css and any necessary data files) might make this a bit easier to parse. It's obvious from the presentation that y'all worked well together and had fun making this project--great work! It's a delight to use and to look at, and something I hope you're very proud of! Lots of complexity in a simple user interface is not an easy thing to do, and you pulled it off well here :)
+
 import React, { Component } from "react";
 import {
   BrowserRouter as Router,

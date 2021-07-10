@@ -27,12 +27,14 @@ export default class CombatPage extends Component {
         outcome: ''
     }
 
+    // nice work on this fetch method! i didn't see any other groups think to abstract their reused fetches like this. Even though you don't reuse this code, it's nice to know that the function is around in case you need to (which is inevitable as the app grows)
     doFetch = async () => {
         const all_cards_data = await getAllTypedCards('minor');
         let mungedCards = all_cards_data.filter(card => card.value <= 10);
-        var minorTarot = new Deck(mungedCards);
+        // I just did a replaceAll on vars to make them consts. Some of them might need to be lets, but I think the replace shouuuld be fine
+        const minorTarot = new Deck(mungedCards);
         this.setState({ current_deck: minorTarot.drawRandom(56)});
-        var currentDeck = new Deck(this.state.current_deck);
+        const currentDeck = new Deck(this.state.current_deck);
         this.setState({ current_hand: currentDeck.drawRandom(4)});
     }
 
@@ -40,8 +42,10 @@ export default class CombatPage extends Component {
         await this.doFetch();
     }
 
+    // very cool function--these three parameters are the heart of the game, and it's cool that everything issues from changes to those three things
     handleCardSelect = async (val, elem, beats) => {
 // This section will check to see if the enemy is afflicted with any element and deal damage accordingly. After that, it will change the affliction.
+// for readability, this function should probably have been broken into a few functions with clear, readable names, like this.enemyLost() and this.userLost, etc 
         if(this.state.enemy_affliction === beats) {
             let enemyCritHealth = Number(this.state.enemy_health - (val * 2))
             await this.setState({ enemy_health: enemyCritHealth })
@@ -64,7 +68,7 @@ export default class CombatPage extends Component {
             await this.setState({ loss_trigger: true })
             setTimeout(() => this.doGameOver(), 1000)
         } else {
-            var newDeck = new Deck(this.state.current_deck)
+            const newDeck = new Deck(this.state.current_deck)
             let newHand = newDeck.drawRandom(4)
             await this.setState({current_hand: newHand})
         }
@@ -74,7 +78,7 @@ export default class CombatPage extends Component {
 // Initializing a new deck for the enemy to use.
         const all_cards_data = await getAllTypedCards('minor');
         let mungedCards = all_cards_data.filter(card => card.value <= 10);
-        var minorTarot = new Deck(mungedCards);
+        const minorTarot = new Deck(mungedCards);
 // drawing the card the enemy will play.
         let enemyCardObject = minorTarot.drawRandom(1)
 // This section will determin the element and the strength of the enemy card.

@@ -13,9 +13,10 @@ export default class RewardsPage extends Component {
 
     doFetch = async () => {
         const all_cards_data = await getAllCards();
-        var fullDeck = new Deck(all_cards_data);
+        const fullDeck = new Deck(all_cards_data);
         this.setState({ 
             all_cards: all_cards_data,
+            // very cool that you got to use this card library. makes everything so readable!
             reward_cards: fullDeck.drawRandom(3)
         });
     }
